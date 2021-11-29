@@ -1,0 +1,15 @@
+package(default_visibility = ["//visibility:public"])
+
+filegroup(
+    name="myfile",
+    srcs=["myfile.txt"],
+)
+
+cc_binary(
+    name = "main",
+    srcs = ["main.cpp"],    
+    deps = [
+        "@boost//:filesystem",
+    ],
+    data =["//filesystem_example:myfile"]
+)

@@ -1,0 +1,16 @@
+workspace(
+    name = "wise_enum_using_http_archive",
+)
+
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+http_archive(
+    name = "wise_enum",
+    build_file = "//third_party/wise_enum:BUILD",
+    strip_prefix = "wise_enum-3.0.0",
+    urls = [
+      "https://github.com/quicknir/wise_enum/archive/3.0.0.zip",
+    ],
+)
+
+

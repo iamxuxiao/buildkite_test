@@ -1,0 +1,8 @@
+workspace(
+    name = "fmt_local_repository",
+)
+
+local_repository(
+    name = "fmt",
+    path = "./third_party/fmt",
+)

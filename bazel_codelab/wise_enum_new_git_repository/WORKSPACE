@@ -1,0 +1,24 @@
+workspace(
+    name = "ways_of_doing_third_party",
+)
+
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "new_git_repository")
+
+
+new_git_repository(
+    name = "wise_enum",
+    branch="master",
+    remote="https://github.com/quicknir/wise_enum",
+    build_file_content="""
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+cc_library(
+    name = "wise_enum",
+    hdrs = glob(["*.h"]),
+    include_prefix = "wise_enum",
+    includes = ["_virtual_includes/wise_enum"],
+    visibility = ["//visibility:public"],
+)
+"""
+)
+
